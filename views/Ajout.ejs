@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/style.css">
+<h1>Encoder les données de la pièce</h1>
+<form id="addForm" action="/add" method="POST">
+  Pièce : <input name="name" /><br>
+  Largeur : <input type="number" id="Largeur" name="width" /><br>
+  Longueur : <input type="number" id="Longueur" name="length" /><br>
+  <input id="bleu" type="submit" value="Enregistrer" />
+</form>
+
+<form id="calculForm">
+  <button id="bleu" type="button" onclick="calculateArea()">Calculer la surface totale de la pièce</button>
+  <p class= "total-line" id="displayArea"></p><br>
+</form>
+
+<!-- Bouton pour aller vers la page de contenu -->
+<a href="/">
+    <button>Aller vers le site</button>
+</a>
+
+<script>
+  document.getElementById('addForm').addEventListener('submit', function(e) {
+    // Vérifier si l'événement provient du bouton de calcul
+    if (e.submitter && e.submitter.id === 'bleu') {
+      // Si c'est le bouton de calcul, ne pas empêcher la soumission
+      return;
+    }
+
+    e.preventDefault(); // Empêche la soumission du formulaire par défaut
+    // Vous pouvez ajouter ici la logique pour enregistrer les données
+  });
+
+  function calculateArea() {
+    // Get the input values
+    var longueur = document.getElementById("Longueur").value;
+    var largeur = document.getElementById("Largeur").value;
+
+    // Calculate the area
+    var area = longueur * largeur;
+
+    // Display the area
+    document.getElementById("displayArea").innerText = "Surface de la pièce : " + area + " mètres carrés";
+  }
+</script>

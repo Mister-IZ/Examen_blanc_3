@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/style.css">
+<h1>Liste des pièces de l'appartement</h1>
+<ul>
+  <% for(elem of room1) { %>
+    <li>Pièce : <%= elem.name %> → Surface : <%= elem.length * elem.width %> mètres carré <a href="/delete/<%= elem.id %>">Supprimer</a></li>
+  <% } %>
+</ul>
+
+<form action="/calcul" method="POST">
+  <input type="submit" id="bleu" value="Calculer la surface total de l'appartement" />
+  <div class="total-line">
+    <span>La surface totale est de <%= totalarea  %> mètres carré </span>
+  </div>
+</form>
+
+
+<form action="/autrepiece" method="GET">
+  <input type="submit" id="bleu" value="Encoder une autre piéce" />
+</form> 
+
+<!-- Les deux fonctionne ↓↑ -->
+
+<!-- Bouton pour aller vers la page de contenu
+<a href="/achat">
+  <button>Ajouter un article</button>
+</a> -->
+

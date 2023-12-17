@@ -1,0 +1,33 @@
+body {
+  width: 500px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
+
+button, #bleu {
+  background-color: steelblue;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+label, input {
+  display: block;
+  margin: 10px 0;
+}
+
+ul li {
+  background-color: lightgrey;
+  padding: 5px;
+  margin: 5px;
+}
+
+.total-line {
+  background-color: lightblue;
+  padding: 5px;
+  margin: 5px;
+}
+
